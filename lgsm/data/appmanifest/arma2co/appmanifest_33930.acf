@@ -1,0 +1,44 @@
+"AppState"
+{
+	"appid"		"33930"
+	"universe"		"1"
+	"name"		"Arma 2: Operation Arrowhead"
+	"StateFlags"		"4"
+	"installdir"		"Arma 2 Operation Arrowhead"
+	"LastUpdated"		"1656075084"
+	"SizeOnDisk"		"0"
+	"StagingSize"		"0"
+	"buildid"		"0"
+	"LastOwner"		"76561198007891584"
+	"UpdateResult"		"0"
+	"BytesToDownload"		"0"
+	"BytesDownloaded"		"0"
+	"BytesToStage"		"0"
+	"BytesStaged"		"0"
+	"TargetBuildID"		"0"
+	"AutoUpdateBehavior"		"0"
+	"AllowOtherDownloadsWhileRunning"		"0"
+	"ScheduledAutoUpdate"		"0"
+	"InstalledDepots"
+	{
+		"33934"
+		{
+			"manifest"		"1218581768977878334"
+			"size"		"1472611829"
+			"dlcappid"		"33934"
+		}
+		"33931"
+		{
+			"manifest"		"7739883071566525791"
+			"size"		"8714127071"
+		}
+	}
+	"UserConfig"
+	{
+		"language"		"english"
+	}
+	"MountedConfig"
+	{
+		"language"		"english"
+	}
+}
