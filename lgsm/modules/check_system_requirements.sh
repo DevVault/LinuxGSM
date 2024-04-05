@@ -13,6 +13,12 @@ info_distro.sh
 
 if [ "${shortname}" == "ark" ]; then
 	ramrequirementgb="7"
+elif [ "${shortname}" == "arma2" ]; then
+	ramrequirementgb="2"
+elif [ "${shortname}" == "arma2oa" ]; then
+	ramrequirementgb="2"
+elif [ "${shortname}" == "arma2co" ]; then
+	ramrequirementgb="2"
 elif [ "${shortname}" == "arma3" ]; then
 	ramrequirementgb="2"
 elif [ "${shortname}" == "armar" ]; then

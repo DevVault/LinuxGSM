@@ -308,6 +308,78 @@ fn_info_game_ark() {
 # Comment: // or /* */
 # Example: serverName = "SERVERNAME";
 # Filetype: cfg
+fn_info_game_arma2() {
+	if [ -f "${servercfgfullpath}" ]; then
+		fn_info_game_sqf "adminpassword" "passwordAdmin"
+		fn_info_game_sqf "maxplayers" "maxPlayers"
+		fn_info_game_sqf "servername" "hostname"
+		fn_info_game_sqf "serverpassword" "password"
+	fi
+	adminpassword="${adminpassword:-"NOT SET"}"
+	battleeyeport="$((port + 4))"
+	maxplayers="${maxplayers:-"0"}"
+	port="${port:-"0"}"
+	queryport="$((port + 1))"
+	servername="${servername:-"NOT SET"}"
+	serverpassword="${serverpassword:-"NOT SET"}"
+	steamport="$((port + 2))"
+	voiceport="${port:-"0"}"
+	voiceunusedport="$((port + 3))"
+}
+
+# Config Type: SQF
+# Parameters: true
+# Comment: // or /* */
+# Example: serverName = "SERVERNAME";
+# Filetype: cfg
+fn_info_game_arma2oa() {
+	if [ -f "${servercfgfullpath}" ]; then
+		fn_info_game_sqf "adminpassword" "passwordAdmin"
+		fn_info_game_sqf "maxplayers" "maxPlayers"
+		fn_info_game_sqf "servername" "hostname"
+		fn_info_game_sqf "serverpassword" "password"
+	fi
+	adminpassword="${adminpassword:-"NOT SET"}"
+	battleeyeport="$((port + 4))"
+	maxplayers="${maxplayers:-"0"}"
+	port="${port:-"0"}"
+	queryport="$((port + 1))"
+	servername="${servername:-"NOT SET"}"
+	serverpassword="${serverpassword:-"NOT SET"}"
+	steamport="$((port + 2))"
+	voiceport="${port:-"0"}"
+	voiceunusedport="$((port + 3))"
+}
+
+# Config Type: SQF
+# Parameters: true
+# Comment: // or /* */
+# Example: serverName = "SERVERNAME";
+# Filetype: cfg
+fn_info_game_arma2co() {
+	if [ -f "${servercfgfullpath}" ]; then
+		fn_info_game_sqf "adminpassword" "passwordAdmin"
+		fn_info_game_sqf "maxplayers" "maxPlayers"
+		fn_info_game_sqf "servername" "hostname"
+		fn_info_game_sqf "serverpassword" "password"
+	fi
+	adminpassword="${adminpassword:-"NOT SET"}"
+	battleeyeport="$((port + 4))"
+	maxplayers="${maxplayers:-"0"}"
+	port="${port:-"0"}"
+	queryport="$((port + 1))"
+	servername="${servername:-"NOT SET"}"
+	serverpassword="${serverpassword:-"NOT SET"}"
+	steamport="$((port + 2))"
+	voiceport="${port:-"0"}"
+	voiceunusedport="$((port + 3))"
+}
+
+# Config Type: SQF
+# Parameters: true
+# Comment: // or /* */
+# Example: serverName = "SERVERNAME";
+# Filetype: cfg
 fn_info_game_arma3() {
 	if [ -f "${servercfgfullpath}" ]; then
 		fn_info_game_sqf "adminpassword" "passwordAdmin"
@@ -2303,6 +2375,12 @@ if [ "${shortname}" == "ac" ]; then
 	fn_info_game_ac
 elif [ "${shortname}" == "ark" ]; then
 	fn_info_game_ark
+elif [ "${shortname}" == "arma2" ]; then
+	fn_info_game_arma2
+elif [ "${shortname}" == "arma2oa" ]; then
+	fn_info_game_arma2oa
+elif [ "${shortname}" == "arma2co" ]; then
+	fn_info_game_arma2co
 elif [ "${shortname}" == "arma3" ]; then
 	fn_info_game_arma3
 elif [ "${shortname}" == "armar" ]; then

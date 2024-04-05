@@ -42,6 +42,15 @@ fn_default_config_remote() {
 		if [ "${config}" == "${servercfgdefault}" ]; then
 			mkdir -p "${servercfgdir}"
 			cp -nv "${lgsmdir}/config-default/config-game/${config}" "${servercfgfullpath}"
+		elif [ "${shortname}" == "arma2" ] && [ "${config}" == "${networkcfgdefault}" ]; then
+			mkdir -p "${servercfgdir}"
+			cp -nv "${lgsmdir}/config-default/config-game/${config}" "${networkcfgfullpath}"
+		elif [ "${shortname}" == "arma2oa" ] && [ "${config}" == "${networkcfgdefault}" ]; then
+			mkdir -p "${servercfgdir}"
+			cp -nv "${lgsmdir}/config-default/config-game/${config}" "${networkcfgfullpath}"
+		elif [ "${shortname}" == "arma2co" ] && [ "${config}" == "${networkcfgdefault}" ]; then
+			mkdir -p "${servercfgdir}"
+			cp -nv "${lgsmdir}/config-default/config-game/${config}" "${networkcfgfullpath}"
 		elif [ "${shortname}" == "arma3" ] && [ "${config}" == "${networkcfgdefault}" ]; then
 			mkdir -p "${servercfgdir}"
 			cp -nv "${lgsmdir}/config-default/config-game/${config}" "${networkcfgfullpath}"
@@ -199,6 +208,27 @@ elif [ "${shortname}" == "ahl2" ]; then
 elif [ "${shortname}" == "ark" ]; then
 	fn_check_cfgdir
 	array_configs+=(GameUserSettings.ini)
+	fn_fetch_default_config
+	fn_default_config_remote
+	fn_set_config_vars
+	fn_list_config_locations
+elif [ "${shortname}" == "arma2" ]; then
+	fn_check_cfgdir
+	array_configs+=(server.cfg network.cfg)
+	fn_fetch_default_config
+	fn_default_config_remote
+	fn_set_config_vars
+	fn_list_config_locations
+elif [ "${shortname}" == "arma2oa" ]; then
+	fn_check_cfgdir
+	array_configs+=(server.cfg network.cfg)
+	fn_fetch_default_config
+	fn_default_config_remote
+	fn_set_config_vars
+	fn_list_config_locations
+elif [ "${shortname}" == "arma2co" ]; then
+	fn_check_cfgdir
+	array_configs+=(server.cfg network.cfg)
 	fn_fetch_default_config
 	fn_default_config_remote
 	fn_set_config_vars

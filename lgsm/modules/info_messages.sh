@@ -663,7 +663,7 @@ fn_info_messages_ports_edit() {
 
 	startparameterslocation="${red}UNKNOWN${default}"
 	# engines/games that require editing in the config file.
-	local ports_edit_array=("ac" "arma3" "armar" "bo" "bt" "ct" "dst" "eco" "idtech2" "idtech3" "idtech3_ql" "jc2" "jc3" "lwjgl2" "mcb" "nec" "pc" "pc2" "prism3d" "pz" "qw" "refractor" "renderware" "rw" "sb" "sdtd" "st" "stn" "ts3" "tw" "terraria" "unreal" "unreal2" "unreal3" "vints" "wurm")
+	local ports_edit_array=("ac" "arma2" "arma2oa" "arma2co" "arma3" "armar" "bo" "bt" "ct" "dst" "eco" "idtech2" "idtech3" "idtech3_ql" "jc2" "jc3" "lwjgl2" "mcb" "nec" "pc" "pc2" "prism3d" "pz" "qw" "refractor" "renderware" "rw" "sb" "sdtd" "st" "stn" "ts3" "tw" "terraria" "unreal" "unreal2" "unreal3" "vints" "wurm")
 	for port_edit in "${ports_edit_array[@]}"; do
 		if [ "${shortname}" == "ut3" ]; then
 			startparameterslocation="${servercfgdir}/UTWeb.ini"
@@ -806,6 +806,42 @@ fn_info_messages_ark() {
 		fn_port "RAW UDP Socket" rawport udp
 		fn_port "Query" queryport udp
 		fn_port "RCON" rconport tcp
+	} | column -s $'\t' -t
+}
+
+fn_info_messages_arma2() {
+	{
+		fn_port "header"
+		fn_port "Game" port udp
+		fn_port "Voice" voiceport udp
+		fn_port "Query" queryport udp
+		fn_port "Steam" steamport udp
+		fn_port "Voice (unused)" voiceunusedport udp
+		fn_port "BattleEye" battleeyeport udp
+	} | column -s $'\t' -t
+}
+
+fn_info_messages_arma2oa() {
+	{
+		fn_port "header"
+		fn_port "Game" port udp
+		fn_port "Voice" voiceport udp
+		fn_port "Query" queryport udp
+		fn_port "Steam" steamport udp
+		fn_port "Voice (unused)" voiceunusedport udp
+		fn_port "BattleEye" battleeyeport udp
+	} | column -s $'\t' -t
+}
+
+fn_info_messages_arma2co() {
+	{
+		fn_port "header"
+		fn_port "Game" port udp
+		fn_port "Voice" voiceport udp
+		fn_port "Query" queryport udp
+		fn_port "Steam" steamport udp
+		fn_port "Voice (unused)" voiceunusedport udp
+		fn_port "BattleEye" battleeyeport udp
 	} | column -s $'\t' -t
 }
 
@@ -1726,6 +1762,12 @@ fn_info_messages_select_engine() {
 		fn_info_messages_ac
 	elif [ "${shortname}" == "ark" ]; then
 		fn_info_messages_ark
+	elif [ "${shortname}" == "arma2" ]; then
+		fn_info_messages_arma2
+	elif [ "${shortname}" == "arma2oa" ]; then
+		fn_info_messages_arma2oa
+	elif [ "${shortname}" == "arma2co" ]; then
+		fn_info_messages_arma2co
 	elif [ "${shortname}" == "arma3" ]; then
 		fn_info_messages_arma3
 	elif [ "${shortname}" == "armar" ]; then
