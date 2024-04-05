@@ -421,6 +421,19 @@ fn_check_steamcmd_appmanifest() {
 				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_90.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
 				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_10.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
 				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_70.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+			elif [ "${shortname}" == "arma2" ]; then
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33900.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33910.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+			elif [ "${shortname}" == "arma2oa" ]; then
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33930.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_65700.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_65720.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+			elif [ "${shortname}" == "arma2co" ]; then
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33900.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33910.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_33930.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_65700.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
+				fn_fetch_file_github "lgsm/data/appmanifest/${shortname}" "appmanifest_65720.acf" "${serverfiles}/steamapps" "nochmodx" "norun" "noforce" "nohash"
 			fi
 			fn_dl_steamcmd
 		fi
