@@ -66,6 +66,17 @@ fn_dl_steamcmd() {
 			else
 				${unbuffer} ${steamcmdcommand} +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_set_config 90 mod "${appidmod}" +app_update "${appid}" ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
 			fi
+		elif [ "${shortname}" == "arma2co" ]; then
+			if [ -n "${branch}" ] && [ -n "${betapassword}" ]; then
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update 33910 ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update "${appid}" -beta "${branch}" -betapassword "${betapassword}" ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+			elif [ -n "${branch}" ]; then
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update 33910 ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update "${appid}" -beta "${branch}" ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+			else
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update 33910 ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+				${unbuffer} ${steamcmdcommand} +@sSteamCmdForcePlatformType windows +force_install_dir "${serverfiles}" +login "${steamuser}" "${steampass}" +app_update "${appid}" ${validate} +quit | uniq | tee -a "${lgsmlog}" "${steamcmdlog}"
+			fi
 		# Force Windows Platform type.
 		elif [ "${steamcmdforcewindows}" == "yes" ]; then
 			if [ -n "${branch}" ] && [ -n "${betapassword}" ]; then
